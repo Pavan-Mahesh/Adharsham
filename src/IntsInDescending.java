@@ -10,8 +10,7 @@ public class IntsInDescending {
         String[] num = given.split("\\D+");
         String[] non_num = given.split("\\d+");
         if(non_num[0].compareTo(given) == 0) {
-            System.out.println("output:");
-            System.out.println(given);
+            System.out.println("output:\n" + given);
             return;
         }
         boolean empty = num[0].compareTo("") == 0;
@@ -19,24 +18,25 @@ public class IntsInDescending {
         ArrayList<Integer> value = new ArrayList<>();
         int start = empty ? 1: 0;
         for(int idx=start; idx<num.length; idx++)
-            value.add(Integer.parseInt(num[idx]));
+            value.add(Integer.valueOf(num[idx]));
         sort(value);
         for(int idx=0; idx<value.size(); idx++)
             num[idx+start] = Integer.toString(value.get(idx));
 
         StringBuilder result = getResult(num, non_num, empty);
-        System.out.println("output:");
-        System.out.println(result);
+        System.out.println("output:\n" + result);
     }
     private static StringBuilder getResult(String[] num, String[] non_num, boolean empty) {
         StringBuilder result = new StringBuilder();
         for(int idx = 0; idx<Math.max(num.length, non_num.length); idx++) {
             if(empty) {
                 result.append(num[idx]);
-                try { result.append(non_num[idx]); } catch (Exception ignore) {}
+                if(idx < non_num.length)
+                    result.append(non_num[idx]);
             }else {
                 result.append(non_num[idx]);
-                try { result.append(num[idx]); } catch (Exception ignore) {}
+                if(idx < num.length)
+                    result.append(non_num[idx]);
             }
         }
         return result;
