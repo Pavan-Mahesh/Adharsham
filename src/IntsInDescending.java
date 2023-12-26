@@ -9,7 +9,7 @@ public class IntsInDescending {
         input.close();
         String[] num = given.split("\\D+");
         String[] non_num = given.split("\\d+");
-        if(String.join(" ", non_num).compareTo(given) == 0) {
+        if(non_num[0].compareTo(given) == 0) {
             System.out.println("output:");
             System.out.println(given);
             return;
