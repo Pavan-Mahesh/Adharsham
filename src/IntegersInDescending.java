@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class IntsInDescending {
+public class IntegersInDescending {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("input:");
