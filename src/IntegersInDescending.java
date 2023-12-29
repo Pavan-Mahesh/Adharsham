@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class IntegersInDescending {
+public class IntsInDescending {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("input:");
@@ -9,7 +9,10 @@ public class IntegersInDescending {
         input.close();
         String[] num = given.split("\\D+");
         String[] non_num = given.split("\\d+");
-        if(non_num[0].compareTo(given) == 0) {
+        if(non_num.length == 0) {
+            System.out.println("output:\n" + given);
+            return;
+        }else if(non_num[0].compareTo(given) == 0) {
             System.out.println("output:\n" + given);
             return;
         }
