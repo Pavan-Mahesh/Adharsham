@@ -29,7 +29,7 @@ public class IntegersInDescending {
     private static StringBuilder getResult(String[] num, String[] non_num, boolean empty) {
         StringBuilder result = new StringBuilder();
         for(int idx = 0; idx<Math.max(num.length, non_num.length); idx++) {
-            if(empty) {
+            if(empty || non_num.length == 0) {
                 result.append(num[idx]);
                 if(idx < non_num.length)
                     result.append(non_num[idx]);
