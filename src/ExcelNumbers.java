@@ -1,5 +1,5 @@
-class DecimalToAlpha {
-    private static void printAlpha(int[] bits) {
+public class ExcelNumbers {
+    static void printAlpha(int[] bits) {
         // ASCII from A-Z : 65-90
         for(int bit: bits)
             System.out.format("%c", bit==0 ? 90 : 65+bit-1); // If 0 then 'Z'
@@ -24,10 +24,7 @@ class DecimalToAlpha {
         }
         printAlpha(bits);
     }
-}
-
-public class ExcelNumbers {
     public static void main(String[] args) {
-        DecimalToAlpha.convertToAlpha(2730);
+        convertToAlpha(2730);
     }
 }
